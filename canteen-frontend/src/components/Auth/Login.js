@@ -79,7 +79,7 @@ const LoginPage = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', { email, password });
+      const response = await axios.post('https://canteen-wallah-2.onrender.com/api/auth/login', { email, password });
       const { token, username } = response.data;
       login(token, username); // Pass the username to the login function
       navigate('/');
