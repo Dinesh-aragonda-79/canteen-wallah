@@ -16,7 +16,7 @@ const corsOptions = {
 };
 
 // Middleware
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json({ limit: '10mb' })); // Add this line to increase payload size limit
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true })); // Add this line to increase payload size limit
