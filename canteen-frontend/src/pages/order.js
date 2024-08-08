@@ -225,7 +225,7 @@ const Order = () => {
 
   const fetchFoodItems = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/foodItems/all');
+      const response = await axios.get('https://canteen-wallah-2.onrender.com/api/foodItems/all');
       setFoodItems(response.data);
     } catch (error) {
       console.error('Failed to fetch food items:', error);
