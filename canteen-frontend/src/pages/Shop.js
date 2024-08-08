@@ -274,7 +274,7 @@ const Shop = () => {
 
   const fetchFoodItems = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/foodItems', {
+      const response = await axios.get('https://canteen-wallah-2.onrender.com/api/foodItems', {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       setFoodItems(response.data);
@@ -360,7 +360,7 @@ const Shop = () => {
   const handleDelete = async (index) => {
     const itemId = foodItems[index]._id;
     try {
-      await axios.delete(`http://localhost:5000/api/foodItems/${itemId}`, {
+      await axios.delete(`https://canteen-wallah-2.onrender.com/api/foodItems/${itemId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       fetchFoodItems();
