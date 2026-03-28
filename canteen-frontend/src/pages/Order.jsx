@@ -225,7 +225,7 @@ const Order = () => {
 
   const fetchFoodItems = async () => {
     try {
-      const response = await axios.get('https://canteen-wallah-2.onrender.com/api/foodItems/all');
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/foodItems/all`);
       setFoodItems(response.data);
     } catch (error) {
       console.error('Failed to fetch food items:', error);

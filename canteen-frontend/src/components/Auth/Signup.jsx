@@ -94,7 +94,7 @@ const SignupPage = () => {
     console.log(formData);
 
     try {
-      const response = await fetch("https://canteen-wallah-2.onrender.com/api/auth/register", {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
