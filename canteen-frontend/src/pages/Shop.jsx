@@ -274,7 +274,7 @@ const Shop = () => {
 
   const fetchFoodItems = async () => {
     try {
-      const response = await axios.get('https://canteen-wallah-2.onrender.com/api/foodItems', {
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/foodItems`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       setFoodItems(response.data);
@@ -334,11 +334,11 @@ const Shop = () => {
     try {
       if (editIndex !== null) {
         const itemId = foodItems[editIndex]._id;
-        await axios.put(`http://localhost:5000/api/foodItems/${itemId}`, newItem, {
+        await axios.put(`${import.meta.env.VITE_API_BASE_URL}/foodItems/${itemId}`, newItem, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
       } else {
-        await axios.post('http://localhost:5000/api/foodItems', newItem, {
+        await axios.post(`${import.meta.env.VITE_API_BASE_URL}/foodItems`, newItem, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
       }
@@ -360,7 +360,7 @@ const Shop = () => {
   const handleDelete = async (index) => {
     const itemId = foodItems[index]._id;
     try {
-      await axios.delete(`https://canteen-wallah-2.onrender.com/api/foodItems/${itemId}`, {
+      await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/foodItems/${itemId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       fetchFoodItems();

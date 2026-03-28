@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
   // Function to check user Authentication
   const userAuthentication = async () => {
     try {
-      const response = await fetch('https://canteen-wallah-2.onrender.com/api/auth/user', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/user`, {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
